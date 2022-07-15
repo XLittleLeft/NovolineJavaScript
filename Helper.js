@@ -1,12 +1,12 @@
 /** @author XLittleLeft#7638, ezMatt#9161 @obf by XLittleLeft#7638 */
 module = script.registerModule("Helper",COMBAT);
-BooleanSetting = new BooleanSetting("speed_helper","SpeedHelper",true);
-BooleanSetting = new BooleanSetting("anti_void","BetterAntiVoid",false);
-NumberSetting = new NumberSetting("set_delay","AntiVoidDelay",1000.0,1000.0,3000.0,10.0);
-BooleanSetting = new BooleanSetting("army","MakeArmy",false);
-NumberSetting = new NumberSetting("army_delay","ArmyDelay",1000.0,10.0,5000.0,10.0);
-BooleanSetting = new BooleanSetting("iq_booster","IQBooster",true);
-BooleanSetting = new BooleanSetting("debug","Debug",false);
+module.addBooleanProperty("speed_helper","SpeedHelper",true);
+module.addBooleanProperty("anti_void","BetterAntiVoid",false);
+module.addDoubleProperty("set_delay","AntiVoidDelay",1000.0,1000.0,3000.0,10.0);
+module.addBooleanProperty("army","MakeArmy",false);
+module.addDoubleProperty("army_delay","ArmyDelay",1000.0,10.0,5000.0,10.0);
+module.addBooleanProperty("iq_booster","IQBooster",true);
+module.addBooleanProperty("debug","Debug",false);
 
 var timer = timer_util.getTimer();
 
@@ -151,18 +151,4 @@ function blockName(x_p,y_p,z_p) {
 
 function BlockPos(ix, iy, iz) {
 	return world.getBlockPos(ix < 0 ? ix - 1 : ix, iy, iz < 0 ? iz - 1 : iz);
-};
-
-//Adds a so-called "Check Box" property to the module
-function BooleanSetting(key,name,state) {
-    return module.addBooleanProperty(key,name,state);
-};
-
-//Adds a so-called "Slider" property to the module
-function NumberSetting(key,name,value,min,max,increment) {
-    if (value.equals(".") || min.equals(".") || max.equals(".") || increment.equals(".")) {
-        return module.addDoubleProperty(key,name,value,min,max,increment);
-    } else {
-        return module.addFloatProperty(key,name,value,min,max,increment);
-    }
 };
