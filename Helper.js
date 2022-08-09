@@ -1,4 +1,4 @@
-/** @author XLittleLeft#7638, ezMatt#9161 @obf by XLittleLeft#7638 */
+/** @author XLittleLeft#7638, ezMatt#9161 */
 module = script.registerModule("Helper",COMBAT);
 module.addBooleanProperty("speed_helper","SpeedHelper",true);
 module.addBooleanProperty("anti_void","BetterAntiVoid",false);
